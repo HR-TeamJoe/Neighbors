@@ -29,6 +29,6 @@ Comment.belongsTo(User, {
 User.hasMany(Comment, { foreignKey: 'sender_id', constraints: false });
 User.hasMany(Comment, { foreignKey: 'receiver_id', constraints: false });
 
-User.sync();
+Comment.sync();
 
 module.exports = Comment;
