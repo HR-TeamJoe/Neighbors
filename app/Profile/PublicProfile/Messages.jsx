@@ -2,6 +2,7 @@ import React from 'react';
 import io from 'socket.io-client';
 import MessageEntry from './MessageEntry.jsx';
 var socket; 
+var objDiv = document.getElementsByClassName('messageBox');
 
 class Messages extends React.Component{
   constructor(props){
@@ -26,11 +27,12 @@ class Messages extends React.Component{
 
     socket.on('server:message', 
       (messages) => {
-        console.log('+++server:message: ', messages)
         this.setState({
           messages
-      })
-    })
+        })
+        objDiv[0].scrollTop = objDiv[0].scrollHeight;
+      }
+    )
 
     socket.on('server:new message',
       (msg) => {
@@ -39,6 +41,7 @@ class Messages extends React.Component{
         this.setState({
           messages: newMessage
         })
+        objDiv[0].scrollTop = objDiv[0].scrollHeight;
       }
     )
 
@@ -53,6 +56,7 @@ class Messages extends React.Component{
       this.setState({
         messages: enteredRoom
       })
+      objDiv[0].scrollTop = objDiv[0].scrollHeight;
     })
 
     socket.on('disconnected', (name) => {
@@ -66,6 +70,7 @@ class Messages extends React.Component{
       this.setState({
         messages: disconnectedRoom
       })
+      objDiv[0].scrollTop = objDiv[0].scrollHeight;
     })
 
   }
@@ -89,13 +94,15 @@ class Messages extends React.Component{
     this.setState({
       message: ''
     })
+
+    objDiv[0].scrollTop = objDiv[0].scrollHeight;
   }
 
   render(){
     return (
       <div className='messagePopup'>
       <div className='col-xs-12 messageBox'>
-              
+        
           <ul className="msgList">
             {this.state.messages.map((eachMessage, idx) => 
               <MessageEntry key={idx} eachMessage={eachMessage} self={this.props.self} friend={this.props.friend} selfName={this.props.allProps.profile.firstName} friendName={this.props.friendName}/>
