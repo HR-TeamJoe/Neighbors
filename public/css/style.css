@@ -1799,21 +1799,6 @@ i.icon-white {
 /* =========================================================
 Team Neighbor's CSS Code*/
 
-.messageBox {
-  border: 1px solid black;
-  background: white;
-  padding: 10px;
-  
-  width: 300px;
-  height: 400px;
-
-  position: fixed;
-  bottom: 0px;
-  right: 20px;
-  
-  overflow: scroll;
-}
-
 .currentUser {
   background: #fce9dd;
   border-radius: 10%;
@@ -1834,16 +1819,64 @@ li {
   list-style: none;
 }
 
-.msgUl {
+.messagePopup {
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  
+  border: 1px solid black;
+  background: white;
+}
+
+.messageBox {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  /*border: 1px solid black;
+  background: white;*/
+  padding: 10px;
+  
+  width: 300px;
+  height: 400px;
+
+  overflow: scroll;
+}
+
+.msgList {
+  padding: 0px; 
+}
+
+.msgBar {
+  /*position: fixed;
+  bottom: 0px;
+  background: green;
+  
+  padding: 5px;*/
+  
+  background: #1bac91;
+  
+}
+
+
+.msgInputBar {
   padding: 0px;
 }
 
-.msgContainer {
-}
-
 .msgInput {
+  margin-top: 5px;
+  margin-bottom: 5px !important;
+  padding: 3px !important;
+  margin-left: 10px;
 }
 
 .msgSubmit {
   padding: 5px;
+
+  margin-left: 16px;
+  margin-top: 5px;
+}
+
+.sendMessageForm {
+  margin-bottom: 0px;
 }
