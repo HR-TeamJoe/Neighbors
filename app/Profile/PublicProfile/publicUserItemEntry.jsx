@@ -9,7 +9,6 @@ class PublicUserItemEntry extends React.Component {
     this.state = {};
   }
   render() {
-    console.log('borrower is ', this.props.borrowed);
     return (
       <div className="row">
         <a href="#" className="pull-left col-md-2">

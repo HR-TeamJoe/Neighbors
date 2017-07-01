@@ -15,6 +15,7 @@ class Comments extends React.Component {
     this.setState({showAll: !this.state.showAll});
   }
 
+
   render() {
     if (!this.props.comments || !this.props.comments.length) {
       return <div>Nobody has commented on this profile yet!</div>
@@ -30,7 +31,10 @@ class Comments extends React.Component {
     // const commentsToShow = this.state.showAll ? this.props.comments : this.props.comments.slice(0,3);
     const commentsToShow = this.props.comments;
     return (
-      <div className="comments"> 
+      <div
+        name="commentsDiv"
+        className="comments"
+        onScroll={this.props.handleScroll}> 
         {
           commentsToShow.map((comment) =>
             <CommentItem

@@ -82,6 +82,7 @@ class Profile extends React.Component {
           />
           <div>
             <Comments
+              handleScroll={this.props.handleScroll}
               comments={this.props.comments}
             />
           </div>
