@@ -93,21 +93,24 @@ class Messages extends React.Component{
 
   render(){
     return (
-      <div>
-        <div className='messages'>
-          <p>CHAT with this person here</p>   
-          <div>
-            <ul>
-              {this.state.messages.map((eachMessage, idx) => 
-                <MessageEntry key={idx} eachMessage={eachMessage} self={this.props.self}/>
-              )}
-            </ul>
+      <div className='messagePopup'>
+      <div className='col-xs-12 messageBox'>
+              
+          <ul className="msgList">
+            {this.state.messages.map((eachMessage, idx) => 
+              <MessageEntry key={idx} eachMessage={eachMessage} self={this.props.self} friend={this.props.friend} selfName={this.props.allProps.profile.firstName} friendName={this.props.friendName}/>
+            )}
+          </ul>
+        
+      </div>
+      <div className='col-xs-12 msgBar'>
+        <form className='row sendMessageForm' onSubmit={(e) => this.sendMessage(e)}>
+          <div className="col-xs-8 msgInputBar">
+            <input className="msgInput" type="text" onChange={this.setMessage} value={this.state.message}/>
           </div>
-          <form className='form' onSubmit={(e) => this.sendMessage(e)}>
-            <input className='formInput' type="text" onChange={this.setMessage} value={this.state.message}/>
-            <button className='formbutton' type="submit">Send</button>
-          </form>
-        </div>
+          <button className="col-xs-3 btn msgSubmit" type="submit">Send</button>
+        </form>
+      </div>
       </div>
     )
   }
