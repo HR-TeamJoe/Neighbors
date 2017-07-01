@@ -90,21 +90,21 @@ class PublicProfile extends React.Component {
             zip={this.state.zip}
           />
           <div>
-          <div>
-            <Comments
-              getComments={this.props.getComments}
-              currentUserId={this.props.currentUserId}
-              comments={this.props.comments}
-            />
+            <div>
+              <Comments
+                getComments={this.props.getComments}
+                currentUserId={this.props.currentUserId}
+                comments={this.props.comments}
+              />
+            </div>
+            <div>
+              <CommentForm
+                currentComment={this.state.currentComment} 
+                handleCommentSubmit={this.handleCommentSubmit}
+                updateComment={this.updateComment}
+              />
+            </div>
           </div>
-          <div>
-            <CommentForm
-              currentComment={this.state.currentComment} 
-              handleCommentSubmit={this.handleCommentSubmit}
-              updateComment={this.updateComment}
-            />
-          </div>
-        </div>
         </div>
         <div className="col-lg-7">
           {this.state.id &&
@@ -114,8 +114,8 @@ class PublicProfile extends React.Component {
             />
           }
         </div>
-        <div>
-          <Messages self={this.props.self} friend={this.props.id} allProps={this.props.allProps}/>
+        <div className="col-lg-12">
+          <Messages self={this.props.self} friend={this.props.id} allProps={this.props.allProps} friendName={this.state.fullName}/>
         </div>
       </div>
     );
