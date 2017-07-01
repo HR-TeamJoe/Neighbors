@@ -230,7 +230,7 @@ blockquote cite a:visited 				{ color:#555; }
 ul, ol {
 	font-size: 1em; /* 16px */
 	line-height: 1.5; /* 24px */
-	margin: 0 0 1.5em 0;
+	margin: 0 0 0 0;
 }
 body, input, textarea {
 }
@@ -1802,9 +1802,83 @@ i.icon-white {
 Team Neighbor's CSS Code*/
 
 .currentUser {
-  background: pink;
+  background: #fce9dd;
+  border-radius: 10%;
 }
 
 .notCurrentUser {
-  background: lightblue;
+  background: #e1f0db;
+  border-radius: 10%;
+}
+
+.joinStatus {
+  font-style: italic;
+  color: gray;
+  font-size: 0.8em;
+}
+
+li {
+  list-style: none;
+}
+
+.messagePopup {
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  
+  border: 1px solid black;
+  background: white;
+}
+
+.messageBox {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  /*border: 1px solid black;
+  background: white;*/
+  padding: 10px;
+  
+  width: 300px;
+  height: 400px;
+
+  overflow: scroll;
+}
+
+.msgList {
+  padding: 0px; 
+}
+
+.msgBar {
+  /*position: fixed;
+  bottom: 0px;
+  background: green;
+  
+  padding: 5px;*/
+  
+  background: #1bac91;
+  
+}
+
+
+.msgInputBar {
+  padding: 0px;
+}
+
+.msgInput {
+  margin-top: 5px;
+  margin-bottom: 5px !important;
+  padding: 3px !important;
+  margin-left: 10px;
+}
+
+.msgSubmit {
+  padding: 5px;
+
+  margin-left: 16px;
+  margin-top: 5px;
+}
+
+.sendMessageForm {
+  margin-bottom: 0px;
 }
