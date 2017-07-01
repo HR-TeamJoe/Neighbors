@@ -63,6 +63,7 @@ io.on('connection', function(socket) {
         .then((messages) => {
       socket.emit('server:message', messages)
       console.log('+++messages in index.js socket.on: ', messages)
+      console.log('+++fullName in entered emit: ', data.fullName)
     })
     })
 

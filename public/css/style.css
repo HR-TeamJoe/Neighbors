@@ -230,7 +230,7 @@ blockquote cite a:visited 				{ color:#555; }
 ul, ol {
 	font-size: 1em; /* 16px */
 	line-height: 1.5; /* 24px */
-	margin: 0 0 1.5em 0;
+	margin: 0 0 0 0;
 }
 body, input, textarea {
 }
@@ -1802,18 +1802,48 @@ Team Neighbor's CSS Code*/
 .messageBox {
   border: 1px solid black;
   background: white;
+  padding: 10px;
+  
   width: 300px;
   height: 400px;
+
   position: fixed;
   bottom: 0px;
   right: 20px;
+  
   overflow: scroll;
 }
 
 .currentUser {
-  background: pink;
+  background: #fce9dd;
+  border-radius: 10%;
 }
 
 .notCurrentUser {
-  background: lightblue;
+  background: #e1f0db;
+  border-radius: 10%;
+}
+
+.joinStatus {
+  font-style: italic;
+  color: gray;
+  font-size: 0.8em;
+}
+
+li {
+  list-style: none;
+}
+
+.msgUl {
+  padding: 0px;
+}
+
+.msgContainer {
+}
+
+.msgInput {
+}
+
+.msgSubmit {
+  padding: 5px;
 }

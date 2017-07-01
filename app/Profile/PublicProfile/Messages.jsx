@@ -94,19 +94,21 @@ class Messages extends React.Component{
   render(){
     return (
       <div className='messageBox'>
-        <div>   
-          <div>
-            <ul>
-              {this.state.messages.map((eachMessage, idx) => 
-                <MessageEntry key={idx} eachMessage={eachMessage} self={this.props.self} friend={this.props.friend} selfName={this.props.allProps.profile.firstName} friendName={this.props.friendName}/>
-              )}
-            </ul>
-          </div>
-          <form onSubmit={(e) => this.sendMessage(e)}>
-            <input type="text" onChange={this.setMessage} value={this.state.message}/>
-            <button type="submit">Send</button>
+        
+        
+          <ul className="msgUl">
+            {this.state.messages.map((eachMessage, idx) => 
+              <MessageEntry key={idx} eachMessage={eachMessage} self={this.props.self} friend={this.props.friend} selfName={this.props.allProps.profile.firstName} friendName={this.props.friendName}/>
+            )}
+          </ul>
+          
+          <form className="row msgContainer" onSubmit={(e) => this.sendMessage(e)}>
+            <div className="col-xs-8">
+              <input className="msgInput" type="text" onChange={this.setMessage} value={this.state.message}/>
+            </div>
+            <button className="col-xs-4 msgSubmit" type="submit">Send</button>
           </form>
-        </div>
+        
       </div>
     )
   }
